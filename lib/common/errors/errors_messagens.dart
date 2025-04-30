@@ -26,4 +26,6 @@ abstract class MessagesError {
   static const saveSharedP = 'Erro ao Salvar Cache de Login!!!';
   static const saveSharedPKeyNotFound = 'Cache de Login Não Encontrado!!!';
   static const fetchSharedP = 'Erro ao Recuperar Cache de Login!!!';
+  static const emptySharedP = 'Arquivo Vazio!!!';
+  static const apiError = 'Falha na Conexão da API!!!';
 }

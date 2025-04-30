@@ -12,18 +12,16 @@ sealed class Result<TOk, TError> {
   bool get isFailure => this is Error;
 
   // Retorna o valor de sucesso ou null
-  TOk? get successValueOrNull =>
-      isSuccess ? (this as Success)._value : null;
+  TOk? get successValueOrNull => isSuccess ? (this as Success)._value : null;
 
   // Retorna o valor de erro ou null
-  TError? get failureValueOrNull =>
-      isFailure ? (this as Error)._value : null;
+  TError? get failureValueOrNull => isFailure ? (this as Error)._value : null;
 
   // Função que trata ambos os casos (sucesso e erro)
   // R: tipo de retorno após o fold
   R fold<R>({
-    required R Function(Success value) onSuccess,
-    required R Function(Error error) onFailure,
+    required R Function(TOk okValue) onSuccess,
+    required R Function(TError errorValue) onFailure,
   }) {
     if (this is Success) {
       return onSuccess((this as Success)._value);

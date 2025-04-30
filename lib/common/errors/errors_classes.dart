@@ -35,3 +35,7 @@ class DatasourceResultEmpty extends Failure {
 class APIFailure extends Failure {
   APIFailure([super.msg = MessagesError.defaultError]);
 }
+
+class APIFailureOnSave extends Failure {
+  APIFailureOnSave([super.msg = MessagesError.defaultError]);
+}
